@@ -2,15 +2,15 @@ terraform {
   backend "s3" {
     bucket         = "terraform-series-s3-backend"
     key            = "terraform-jenkins"
-    region         = "us-west-2"
+    region         = "ap-southeast-1"
     encrypt        = true
-    role_arn       = "arn:aws:iam::<ACCOUNT_ID>:role/Terraform-SeriesS3BackendRole"
+    role_arn       = "arn:aws:iam::075119686808:role/Terraform-SeriesS3BackendRole"
     dynamodb_table = "terraform-series-s3-backend"
   }
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-southeast-1"
 }
 
 data "aws_ami" "ami" {
