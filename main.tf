@@ -13,28 +13,9 @@ provider "aws" {
   region = "ap-southeast-1"
 }
 
-data "aws_ami" "ami" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  owners = ["075119686808"]
-}
-
 resource "aws_instance" "server" {
-  ami           = data.aws_ami.ami.id
+  ami           = "ami-04ff9e9b51c1f62ca"
   instance_type = "t2.micro"
-
-  lifecycle {
-    create_before_destroy = true
-  }
-
-  tags = {
-    Name = "Server"
-  }
 }
 
 output "public_ip" {
