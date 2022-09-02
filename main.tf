@@ -21,7 +21,7 @@ data "aws_ami" "ami" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 
-  owners = ["khoi"]
+  owners = ["075119686808"]
 }
 
 resource "aws_instance" "server" {
